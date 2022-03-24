@@ -1,5 +1,6 @@
 package co.com.sofka.biblioteca.reactiva.Blbioteca.Reactiva.models;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -8,7 +9,7 @@ import java.util.UUID;
 @Document  (collection = "recursos")
 public class Recurso
 {
-
+    @Id
     private String id = UUID.randomUUID().toString().substring(0, 10);
 
     private String tipo;
@@ -60,15 +61,5 @@ public class Recurso
     }
 
 
-    public Recurso( String tipo, String tematica,  Boolean disponible) {
 
-        this.tipo = tipo;
-        this.tematica = tematica;
-
-        this.disponible = disponible;
-    }
-
-    public Recurso()
-    {
-    }
 }
