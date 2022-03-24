@@ -48,6 +48,20 @@ public class RecursoController
         return recursoService.actualizarRecurso(id,recurso);
     }
 
+    @PutMapping("/prestar/{id}")
+    public String prestar(@PathVariable ("id")String id)
+    {
+        return recursoService.prestar(id);
+    }
+    @PutMapping("/devolver/{id}")
+    public String devolver(@PathVariable ("id")String id)
+    {
+        return recursoService.prestar(id);
+    }
+
+
+
+
 
 
 

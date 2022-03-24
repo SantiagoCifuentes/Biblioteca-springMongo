@@ -18,7 +18,7 @@ public class Recurso
 
     private LocalDateTime fechaPrestamo;
 
-    private Boolean disponible = true;
+    private Boolean disponible ;
 
     public String getId() {
         return id;
@@ -60,6 +60,6 @@ public class Recurso
         this.disponible = disponible;
     }
 
-
-
+    public Recurso() {
+    }
 }
