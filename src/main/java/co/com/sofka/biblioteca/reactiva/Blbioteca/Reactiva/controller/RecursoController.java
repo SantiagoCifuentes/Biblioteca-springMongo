@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping ("/recursos")
+@RequestMapping ("/biblioteca")
 public class RecursoController
 {
 
@@ -28,6 +29,25 @@ public class RecursoController
     {
         return recursoService.obtenerRecurso(id);
     }
+
+    @GetMapping(value= "/recursos")
+    public List<Recurso>obtenerRecursos()
+    {
+        return recursoService.obtenerTodosRecursos();
+    }
+
+    @DeleteMapping("/recursos/{id}")
+    public void deleteRecurso(@PathVariable("id")String id)
+    {
+              recursoService.eliminarRecurso(id);
+    }
+
+    @PutMapping("/recurso/{id}")
+    public Optional<Recurso> actualizarRecurso(@PathVariable ("id")String id,@RequestBody Recurso recurso)
+    {
+        return recursoService.actualizarRecurso(id,recurso);
+    }
+
 
 
 

@@ -6,6 +6,7 @@ import co.com.sofka.biblioteca.reactiva.Blbioteca.Reactiva.recursoRepository.Rec
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,4 +26,27 @@ public class RecursoService {
     public Optional<Recurso> obtenerRecurso(String id) {
         return recursoRepository.findById(id);
     }
+
+    public List<Recurso> obtenerTodosRecursos()
+    {
+        return recursoRepository.findAll();
+    }
+
+    public void eliminarRecurso(String id)
+    {
+         recursoRepository.deleteById(id);
+    }
+
+
+    public Optional<Recurso> actualizarRecurso(String id, Recurso recurso)
+    {
+
+
+        return recursoRepository.findById(id).map(recurso1 ->
+        {
+            recurso.setId(id);
+            return recursoRepository.save(recurso);
+        });
+    }
+
 }
