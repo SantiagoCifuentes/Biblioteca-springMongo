@@ -62,4 +62,12 @@ public class Recurso
 
     public Recurso() {
     }
+
+    public Recurso(String id, String tipo, String tematica, LocalDateTime fechaPrestamo, Boolean disponible) {
+        this.id = id;
+        this.tipo = tipo;
+        this.tematica = tematica;
+        this.fechaPrestamo = fechaPrestamo;
+        this.disponible = disponible;
+    }
 }

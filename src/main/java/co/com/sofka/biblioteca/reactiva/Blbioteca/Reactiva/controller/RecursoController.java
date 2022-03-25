@@ -59,6 +59,12 @@ public class RecursoController
         return recursoService.prestar(id);
     }
 
+    @GetMapping("/recursos/recomendacion")
+    public List<Recurso>recomendar(@RequestParam String tipo, @RequestParam String tematica)
+    {
+        return  recursoService.recomendar(tipo,tematica);
+    }
+
 
 
 

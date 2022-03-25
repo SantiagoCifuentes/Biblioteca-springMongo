@@ -91,9 +91,15 @@ public class RecursoService {
 
         return devolucionExitosa;
 
+    }
 
 
+    public List<Recurso> recomendar(String tipo, String tematica)
+    {
+        String tipoRecurso= tipo;
+        String tematicaRecurso=tematica;
 
+      return   recursoRepository.findAllByTipoAndTematica(tipoRecurso,tematicaRecurso);
     }
 
 
