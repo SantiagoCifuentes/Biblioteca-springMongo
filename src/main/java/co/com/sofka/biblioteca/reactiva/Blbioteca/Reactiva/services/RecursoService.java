@@ -78,8 +78,8 @@ public class RecursoService {
 
         String devolucionExitosa = "El recurso se ha devuelto con exito";
 //
-        Recurso recurso = recursoRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Recurso no encontrado"));
+        Recurso recurso = recursoRepository.findById(id).orElseThrow(() -> new RuntimeException("Recurso no encontrado"));
+//
 
         String noPrestado= "El recurso se encuentra disponible";
         if(recurso.getDisponible()==true){

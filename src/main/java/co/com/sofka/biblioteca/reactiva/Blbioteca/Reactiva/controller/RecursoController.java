@@ -56,7 +56,7 @@ public class RecursoController
     @PutMapping("/devolver/{id}")
     public String devolver(@PathVariable ("id")String id)
     {
-        return recursoService.prestar(id);
+        return recursoService.devolver(id);
     }
 
     @GetMapping("/recursos/recomendacion")

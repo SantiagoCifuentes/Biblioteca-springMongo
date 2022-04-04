@@ -70,4 +70,11 @@ public class Recurso
         this.fechaPrestamo = fechaPrestamo;
         this.disponible = disponible;
     }
+
+    public Recurso(String id, String tipo, String tematica, Boolean disponible) {
+        this.id = id;
+        this.tipo = tipo;
+        this.tematica = tematica;
+        this.disponible = disponible;
+    }
 }
